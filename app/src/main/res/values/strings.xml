@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">inventario_offline</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="ingrese_sus_credenciales">Ingrese sus credenciales</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="inventario_offline">Inventario Offline</string>
+    <string name="wakeapp">WakeApp</string>
+    <string name="recuperar_contrasena">Recuperar Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="correo_no_corresponde">El correo no corresponde</string>
+    <string name="emailinvalido">Email inválido</string>
+    <string name="campo_requerido">Campo requerido</string>
+    <string name="contraseña_corta">La contraseña debe tener mínimo 6 caracteres</string>
+    <string name="sub_bienvenido">A continuación realizaremos la creación de su cuenta de usuario, para su seguridad los datos ingresados se solicitarán cada vez que inicie sesión. El correo será utilizado para la recuperación de sus datos.</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="crear">Crear</string>
+    <!-- MENU PRINCIPAL -->
+    <string name="activos_enlazados">Activos Enlazados</string>
+    <string name="gestion_activos">Gestión</string>
+    <string name="sub_gestion">Agrega, edita o elimina tus activos</string>
+    <string name="inventario">Inventario</string>
+    <string name="sub_inventario">Realiza un conteo actual de los activos</string>
+    <string name="busqueda">Búsqueda</string>
+    <string name="sub_busqueda">¿No encuentras un activo?</string>
+    <string name="configuracion">Configuraciones</string>
+    <string name="sub_configuracion">Ubicaciones, Idiomas, Usuario</string>
+    <string name="recorrer">Recorrer</string>
+    <string name="sin_internet">No cuentas con acceso a internet</string>
+    <string name="comprueba_conexion">Validando conexión</string>
+    <string name="correo_enviado">Correo Enviado</string>
+    <string name="correo_error">Error al enviar correo</string>
+    <string name="enviando_correo">Enviando Correo</string>
 </resources>
