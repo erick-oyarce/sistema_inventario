@@ -1,4 +1,4 @@
-# Info Coronavirus
+# Sistema de inventario Local
 
 _Sistema que permite el control de inventarios de activos fijos, con un funcionamiento offline, por lo que la información es almacenada en el dispositivo, sin embargo, es posible exportar los datos en formato excel._
 
