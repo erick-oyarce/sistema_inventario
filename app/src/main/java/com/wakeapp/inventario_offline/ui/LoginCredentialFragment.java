@@ -1,0 +1,91 @@
+package com.wakeapp.inventario_offline.ui;
+
+import android.content.Intent;
+import android.hardware.fingerprint.FingerprintManager;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.room.Room;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.wakeapp.inventario_offline.R;
+import com.wakeapp.inventario_offline.controller.RoomSQLite.AppDataBase;
+import com.wakeapp.inventario_offline.databinding.FragmentLoginCredentialBinding;
+import com.wakeapp.inventario_offline.model.UserDB;
+import com.wakeapp.inventario_offline.utils.Alertas;
+import com.wakeapp.inventario_offline.utils.Constants;
+import com.wakeapp.inventario_offline.utils.Validador;
+
+import es.dmoral.toasty.Toasty;
+
+import static android.content.Context.FINGERPRINT_SERVICE;
+
+public class LoginCredentialFragment extends Fragment {
+
+    public LoginCredentialFragment() {
+        // Required empty public constructor
+    }
+    public static LoginCredentialFragment newInstance() {
+        return new LoginCredentialFragment();
+    }
+
+    private FragmentLoginCredentialBinding binding;
+    FingerprintManager fingerprintManager;
+
+    /**
+     * base de datos
+     **/
+    private AppDataBase bd;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentLoginCredentialBinding.inflate(getLayoutInflater());
+        init();
+        return binding.getRoot();
+    }
+
+    public void init(){
+        fingerprintManager = (FingerprintManager) getActivity().getSystemService(FINGERPRINT_SERVICE);
+        bd = Room.databaseBuilder(getContext(), AppDataBase.class, Constants.BD_NAME)
+                .allowMainThreadQueries()
+                .build();
+
+        if(fingerprintManager == null){
+            binding.huella.setVisibility(View.INVISIBLE);
+        }
+
+        binding.huella.setOnClickListener(v ->{
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameContent, LoginFingerFragment.newInstance())
+                    .commitNow();
+        });
+
+
+        binding.btnIngresar.setOnClickListener(v -> {
+            if (Validador.validaLogin(binding.edUsuario, binding.edContrasena)) {
+                UserDB user = bd.userDao().sp_Val_User(binding.edUsuario.getEditText().getText().toString().trim(), binding.edContrasena.getEditText().getText().toString().trim());
+                if(user != null){
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                }else{
+                    Toasty.error(getContext(), "Credenciales incorrectas", Toasty.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        binding.recuperar.setOnClickListener(view1 -> Alertas.recuperaCredenciales(getLayoutInflater(), getActivity(), bd));
+
+    }
+
+
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+}

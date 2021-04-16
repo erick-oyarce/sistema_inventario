@@ -3,6 +3,7 @@ package com.wakeapp.inventario_offline.utils;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,15 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.wakeapp.inventario_offline.R;
+import com.wakeapp.inventario_offline.controller.Adapters.AdapterUbicaciones;
 import com.wakeapp.inventario_offline.controller.RoomSQLite.AppDataBase;
+import com.wakeapp.inventario_offline.model.UbicationDB;
 import com.wakeapp.inventario_offline.model.UserDB;
+import com.wakeapp.inventario_offline.ui.UbicationsActivity;
 
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class Alertas {
 
@@ -147,6 +153,61 @@ public class Alertas {
             System.exit(0);
         });
         alertCredencial.show();
+    }
+
+
+    //alert soliciar la creacion de una ubicacion cuando no existe
+    public static void validarCrearUbicacion(LayoutInflater layoutInflater, Activity context) {
+
+        final AlertDialog alertUbicacion;
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        View dialoglayout = layoutInflater.inflate(R.layout.alert_sin_ubicacion, null);
+
+        Button cancelar = dialoglayout.findViewById(R.id.btnCancelar);
+        Button agregar =  dialoglayout.findViewById(R.id.btnCrear);
+        builder.setView(dialoglayout);
+
+        alertUbicacion = builder.create();
+        alertUbicacion.setCancelable(false);
+        agregar.setOnClickListener(view ->  {context.startActivity(new Intent(context, UbicationsActivity.class)); alertUbicacion.dismiss();} );
+        cancelar.setOnClickListener(view -> alertUbicacion.dismiss());
+        alertUbicacion.show();
+    }
+
+    //alertpara agregar nueva ubicacion
+    public static void alertNuevaUbicacion(LayoutInflater layoutInflater, UbicationsActivity context, AppDataBase db, AdapterUbicaciones mAdapter) {
+
+        final AlertDialog alertCreaUbicacion;
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        View dialoglayout = layoutInflater.inflate(R.layout.alert_crear_ubicacion, null);
+        final TextInputLayout ubicacion = dialoglayout.findViewById(R.id.tilUbicacion);
+        final TextInputLayout descripcion = dialoglayout.findViewById(R.id.tilDescripcion);
+
+        Button cancelar = dialoglayout.findViewById(R.id.btnCancelar);
+        Button agregar =  dialoglayout.findViewById(R.id.btnGuardar);
+        builder.setView(dialoglayout);
+
+        alertCreaUbicacion = builder.create();
+        alertCreaUbicacion.setCancelable(false);
+        agregar.setOnClickListener(view -> {
+           if(Validador.camposUbicacion(context, ubicacion, descripcion)){
+                if(db.ubicationDao().sp_Sel_UbicacionNombre(ubicacion.getEditText().getText().toString().trim()) == 0){
+                    UbicationDB ubicationDB = new UbicationDB(ubicacion.getEditText().getText().toString().trim(),descripcion.getEditText().getText().toString().trim());
+                    if(db.ubicationDao().sp_Ins_Ubication(ubicationDB) > 0) {
+                        context.cargarUbicaciones();
+                        alertCreaUbicacion.dismiss();
+                    }else{
+                        Toasty.error(context, context.getString(R.string.error_agregar_ubicacion), Toasty.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toasty.warning(context, context.getString(R.string.ubicacion_existe), Toasty.LENGTH_LONG).show();
+                }
+           }
+        });
+        cancelar.setOnClickListener(view -> alertCreaUbicacion.dismiss());
+        alertCreaUbicacion.show();
     }
 
 }

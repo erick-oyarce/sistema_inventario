@@ -12,20 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_main_sup"
-        android:paddingBottom="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
 
         <TextView
             android:id="@+id/tituloMain"
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/activos_enlazados"
-            android:textSize="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/activos_registrados"
             android:textColor="#fff"
-            android:textStyle="bold"/>
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <include
             android:id="@+id/itemsInventory"
@@ -34,263 +34,246 @@
         <!--</LinearLayout>-->
 
 
-
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/LinearOpciones"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
         android:background="@drawable/background_main_sup2"
-        android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/LinearOpciones"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/gestion"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="20dp"
-            android:background="@drawable/background_main_sup2"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
-            <RelativeLayout
-                android:id="@+id/gestion"
-                android:layout_width="match_parent"
-
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_height="wrap_content">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardGestion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="5dp"
-                    android:minHeight="80dp"
-                    app:cardBackgroundColor="#fff"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="8dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="30dp">
-
-                        <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="@string/gestion_activos"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textColor="@color/colorPrimary" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sub_gestion"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textSize="14sp"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_admin"
-                    android:layout_centerVertical="true"
-                    android:elevation="13dp"/>
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_height="wrap_content">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardInventario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="5dp"
-                    android:minHeight="80dp"
-                    app:cardBackgroundColor="#fff"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="30dp">
-
-                        <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="@string/inventario"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textColor="@color/colorPrimary"  />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sub_inventario"
-                            android:textStyle="bold"
-                            android:paddingEnd="5dp"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textSize="14sp"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_list"
-                    android:layout_centerVertical="true"
-                    android:elevation="13dp"/>
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardGestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                >
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:minHeight="80dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardBusqueda"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginRight="5dp"
-                    android:minHeight="80dp"
-                    app:cardBackgroundColor="#fff"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="16dp">
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="30dp">
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/gestion_activos"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="@string/busqueda"
-                            android:textSize="20dp"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorPrimary"  />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/sub_gestion"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sub_busqueda"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textSize="14sp"/>
+                </LinearLayout>
 
-                    </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:elevation="13dp"
+                android:src="@drawable/ic_admin" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_search"
-                    android:layout_centerVertical="true"
-                    android:elevation="13dp"/>
+        </RelativeLayout>
 
-            </RelativeLayout>
 
-            <RelativeLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInventario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                >
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:minHeight="80dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardConfiguracion"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginRight="5dp"
-                    android:minHeight="80dp"
-                    app:cardBackgroundColor="#fff"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="16dp">
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/inventario"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="30dp">
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:paddingEnd="5dp"
+                        android:text="@string/sub_inventario"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="@string/configuracion"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textColor="@color/colorPrimary"  />
+                </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sub_configuracion"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-smallcaps"
-                            android:textSize="14sp"/>
+            </androidx.cardview.widget.CardView>
 
-                    </LinearLayout>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:elevation="13dp"
+                android:src="@drawable/ic_list" />
 
-                </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_setting"
-                    android:layout_centerVertical="true"
-                    android:elevation="13dp"/>
 
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
-        </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:minHeight="80dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/busqueda"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/sub_busqueda"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:elevation="13dp"
+                android:src="@drawable/ic_search" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardConfiguracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:minHeight="80dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/administracion"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:text="@string/sub_configuracion"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:elevation="13dp"
+                android:src="@drawable/ic_setting" />
+
+        </RelativeLayout>
 
     </LinearLayout>
-
-
-
-
-
-
 
 
 </LinearLayout>
+

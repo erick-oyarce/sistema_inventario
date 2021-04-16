@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/data"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_fingerprint_scan"
+            android:id="@+id/finger"
+            android:paddingTop="2dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogCred"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:elevation="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="32dp"
+            android:textStyle="bold"
+            android:text="@string/ingresar_credenciales"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="#fff"  />
+
+        <TextView
+            android:id="@+id/selecthuella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usar huella digital"
+            android:layout_gravity="right"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:padding="10sp"
+            android:visibility="invisible"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>

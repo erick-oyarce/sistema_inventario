@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.RateAppActivity">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar"
+        android:layout_alignParentTop="true"
+        tools:ignore="IncludeLayoutParam" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="@dimen/margin_normal"
+       android:orientation="vertical"
+       android:layout_below="@id/appbar">
+
+       <TextView
+           android:id="@+id/txtLogin"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/tipo_comentario"
+           android:textStyle="bold"
+           android:fontFamily="sans-serif-smallcaps"
+           android:textColor="@color/colorPrimaryDark"
+           android:textSize="@dimen/text_title"/>
+
+
+       <RelativeLayout
+           android:id="@+id/relSpinner1"
+           android:layout_width="match_parent"
+           android:layout_height="51dp"
+           android:layout_gravity="bottom"
+           android:background="@drawable/style_spinner">
+
+           <Spinner
+               android:id="@+id/spinnerBusqueda"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:backgroundTint="#000"
+               android:dropDownSelector="#000"
+               android:popupBackground="#ffffff"
+               android:theme="@android:style/Theme.Material.Light" />
+
+       </RelativeLayout>
+
+       <com.google.android.material.textfield.TextInputLayout
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+           app:counterMaxLength="200"
+           app:counterEnabled="true"
+           android:hint="Cuentanos más"
+           android:textColorHint="@color/colorPrimaryDark">
+
+           <com.google.android.material.textfield.TextInputEditText
+               android:layout_width="match_parent"
+               android:inputType="textMultiLine"
+               android:gravity="top"
+               android:maxLength="200"
+               android:lines="4"
+               android:maxLines="4"
+               android:layout_height="wrap_content" />
+       </com.google.android.material.textfield.TextInputLayout>
+
+   </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/btnEnviar"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/rateStar_1"
+            android:layout_width="@dimen/width_img_star_rate"
+            android:layout_height="@dimen/height_img_star_rate"
+            android:src="@drawable/ic_star"
+            android:padding="@dimen/padding_normal"
+            android:layout_margin="@dimen/padding_normal"/>
+        <ImageView
+            android:id="@+id/rateStar_2"
+            android:layout_width="@dimen/width_img_star_rate"
+            android:layout_height="@dimen/height_img_star_rate"
+            android:src="@drawable/ic_star"
+            android:padding="@dimen/padding_normal"
+            android:layout_margin="@dimen/padding_normal"/>
+        <ImageView
+            android:id="@+id/rateStar_3"
+            android:layout_width="@dimen/width_img_star_rate"
+            android:layout_height="@dimen/height_img_star_rate"
+            android:src="@drawable/ic_star"
+            android:padding="@dimen/padding_normal"
+            android:layout_margin="@dimen/padding_normal"/>
+        <ImageView
+            android:id="@+id/rateStar_4"
+            android:layout_width="@dimen/width_img_star_rate"
+            android:layout_height="@dimen/height_img_star_rate"
+            android:src="@drawable/ic_star"
+            android:padding="@dimen/padding_normal"
+            android:layout_margin="@dimen/padding_normal"/>
+        <ImageView
+            android:id="@+id/rateStar_5"
+            android:layout_width="@dimen/width_img_star_rate"
+            android:layout_height="@dimen/height_img_star_rate"
+            android:src="@drawable/ic_star"
+            android:padding="@dimen/padding_normal"
+            android:layout_margin="@dimen/padding_normal"/>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnviar"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_margin="@dimen/margin_normal"
+        android:elevation="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textStyle="bold"
+        android:text="@string/enviar"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

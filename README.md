@@ -35,8 +35,8 @@ _No presenta requisitos adicionales, solo es necesaria la aplicación y un dispo
 * [AndroidStudio](https://developer.android.com/studio) - El framework para móviles más usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [Lottie](https://lottiefiles.com/) - Imágenes animadas
-* [Retrofit] (https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java
-* [ROOM] (https://developer.android.com/training/data-storage/room) - Persistencia de datos que nos brinda una capa de abstracción para SQLite 
+* [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java
+* [ROOM](https://developer.android.com/training/data-storage/room) - Persistencia de datos que nos brinda una capa de abstracción para SQLite
 
 
 ## Autores ✒️

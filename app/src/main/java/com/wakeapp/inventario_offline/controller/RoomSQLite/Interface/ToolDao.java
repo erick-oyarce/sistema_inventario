@@ -27,7 +27,7 @@ public interface ToolDao {
 
     //Insertar una herramienta
     @Insert
-    long sp_Ins_Tool(ToolDB user);
+    long sp_Ins_Tool(ToolDB tool);
 
     @Query("SELECT * FROM " + ToolDB.TABLE_NAME + " WHERE " + ToolDB.COLUMN_ID + " = :id")
     ToolDB sp_Sel_Tool(int id);

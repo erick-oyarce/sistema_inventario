@@ -6,6 +6,7 @@ import androidx.room.Query;
 
 import com.wakeapp.inventario_offline.model.UbicationDB;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -17,7 +18,7 @@ public interface UbicationDao {
 
     //Selecciona todas las ubicaciones
     @Query("SELECT * FROM " + UbicationDB.TABLE_NAME)
-    List<UbicationDB> sp_Sel_AllUser();
+    List<UbicationDB> sp_Sel_AllUbications();
 
     //actualiza la informacion de la ubicacion
     @Query("UPDATE " + UbicationDB.TABLE_NAME + " SET ubicacion = :ubicacion, observacion = :password, observacion = :email WHERE "+ UbicationDB.COLUMN_ID +" = :id")
@@ -28,8 +29,12 @@ public interface UbicationDao {
 
     //Insertar una UbicationDB
     @Insert
-    long sp_Ins_Ubication(UbicationDB user);
+    long sp_Ins_Ubication(UbicationDB ubication);
 
     @Query("SELECT * FROM " + UbicationDB.TABLE_NAME + " WHERE " + UbicationDB.COLUMN_ID + " = :id")
     UbicationDB sp_Sel_Ubication(int id);
+
+    //valida si el nombre de la ubicación ya se encuentra registrado
+    @Query("SELECT COUNT(*) FROM " + UbicationDB.TABLE_NAME + " WHERE ubicacion =:ubicacion")
+    int sp_Sel_UbicacionNombre(String ubicacion);
 }

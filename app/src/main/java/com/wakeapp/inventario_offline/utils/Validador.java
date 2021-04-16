@@ -1,7 +1,9 @@
 package com.wakeapp.inventario_offline.utils;
 
+import android.content.Context;
 import android.util.Patterns;
 import com.google.android.material.textfield.TextInputLayout;
+import com.wakeapp.inventario_offline.R;
 
 import java.util.regex.Pattern;
 
@@ -47,5 +49,27 @@ public class Validador {
 
         return valido;
 
+    }
+
+    public static boolean camposUbicacion(Context context, TextInputLayout ubicacion, TextInputLayout descripcion){
+        boolean valido = true;
+
+        if(descripcion.getEditText().getText().toString().trim().equals("")){
+            descripcion.setError(context.getString(R.string.campo_requerido));
+            descripcion.requestFocus();
+            valido = false;
+        }else{
+            descripcion.setError(null);
+        }
+
+        if(ubicacion.getEditText().getText().toString().trim().equals("")){
+            ubicacion.setError(context.getString(R.string.campo_requerido));
+            descripcion.requestFocus();
+            valido = false;
+        }else{
+            ubicacion.setError(null);
+        }
+
+        return valido;
     }
 }

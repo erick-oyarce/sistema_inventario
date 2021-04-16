@@ -35,4 +35,65 @@
     <string name="correo_enviado">Correo Enviado</string>
     <string name="correo_error">Error al enviar correo</string>
     <string name="enviando_correo">Enviando Correo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usarHuella">Usar huella</string>
+    <string name="ingresar_credenciales">Ingresar con credenciales</string>
+
+    <!-- CONFIGURACION -->
+    <string name="credenciales_modificadas">Las credenciales se modificaron correctamente</string>
+    <string name="sin_descripcion">Sin descripción</string>
+    <string name="ubicacion_existe">La ubicación ya existe</string>
+    <string name="error_ubicación">Error al guardar la ubicación</string>
+    <string name="ubicacion_almacenada">Ubicación registrada con éxtio</string>
+    <string name="ubicacion_eliminada">Ubicación eliminada correctamente</string>
+    <string name="tit_config">Administra tus ubicaciones, cambia de idioma o modifica tus credenciales de acceso</string>
+
+    <string name="configuraciones">Configuraciones</string>
+    <string name="ubicaciones">Ubicaciones</string>
+    <string name="idioma">Idioma</string>
+    <string name="sub_ubicaciones">Agrega, edita o elimina ubicaciones para tus activos</string>
+    <string name="sub_idioma">Selecciona un idioma</string>
+    <string name="sub_usuario">Cambia tu nombre o contraseña de usuario</string>
+
+    <string name="modificar">Modificar</string>
+    <string name="tit_set_usuario">Recuerde que los datos ingresados serán solicitados para acceder a la aplicación</string>
+    <string name="cambio_credencial">Cambio de credenciales</string>
+    <string name="solicita_contrseña">Por seguridad ingresa tu contraseña actual</string>
+    <string name="administracion">Administración</string>
+    <string name="responsables">Responsables</string>
+    <string name="sub_responsables">Gestiona los responsables de tus activos</string>
+    <string name="sub_huella">Usar huella para iniciar sesión</string>
+    <string name="ayuda">¿Necesitas ayuda?</string>
+    <string name="sub_ayuda">Revisa como funciona el sistema, con la guía paso a paso</string>
+    <string name="opinion">Danos tu opinión</string>
+    <string name="sub_opinion">Comentanos que te pareció el sistema</string>
+    <string name="activos_registrados">Activos Registrados</string>
+    <string name="agregar">Agregar</string>
+    <string name="sub_agregar">Agrega un nuevo activo a tus registros</string>
+    <string name="editar">Editar</string>
+    <string name="sub_editar">Modifica la información de un activo</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="sub_eliminar">Elimina un activo de tus registros</string>
+    <string name="exportar_datos">Exportar Información</string>
+    <string name="sub_exportar">Descarga los datos registrados en un archivo con formato excel</string>
+    <string name="autorizarHuella">Autorizar Huella</string>
+    <string name="enviar">Enviar</string>
+    <string name="tipo_comentario">Tipo de comentario</string>
+    <string name="version">Versión</string>
+    <string name="title_activity_ubications">UbicationsActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="descripcion">Descripción</string>
+    <string name="aviso">Aviso</string>
+    <string name="txt_no_ubicacion">No existen ubicaciones registradas para asignar un activo, ¿deseas crear una ahora?</string>
+    <string name="no_exist_acitve">No existen activos registrados</string>
+    <string name="guardar">Guardar</string>
+    <string name="nueva_ubicacion">Nueva Ubicación</string>
+    <string name="nombre_ubicacion">Nombre de la ubicación</string>
+    <string name="error_agregar_ubicacion">Error al agregar la ubicación</string>
 </resources>

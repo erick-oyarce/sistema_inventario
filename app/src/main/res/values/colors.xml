@@ -17,6 +17,8 @@
 
     <color name="custom_divider_color">#FF79FF00</color>
 
+    <color name="color_divider">#1E000000</color>
+
 
     <array name="reds">
         <item>@color/md_red_500</item>

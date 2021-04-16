@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.GestionActivity">
+
+    <include android:id="@+id/appbar" layout="@layout/appbar"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_element_configuration">
+
+
+            <LinearLayout
+                android:id="@+id/linAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="@dimen/padding_element_configuration"
+                android:paddingBottom="@dimen/padding_element_configuration">
+
+                <ImageView
+                    android:layout_width="@dimen/image_cards_width"
+                    android:layout_height="@dimen/image_cards_height"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_add_file"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/agregar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/sub_agregar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#A8003D70" />
+
+
+            <LinearLayout
+                android:id="@+id/linEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="@dimen/padding_element_configuration"
+                android:paddingBottom="@dimen/padding_element_configuration">
+
+                <ImageView
+                    android:layout_width="@dimen/image_cards_width"
+                    android:layout_height="@dimen/image_cards_height"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_edit"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/editar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/sub_editar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#A8003D70" />
+
+            <LinearLayout
+                android:id="@+id/linDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="@dimen/padding_element_configuration"
+                android:paddingBottom="@dimen/padding_element_configuration">
+
+                <ImageView
+                    android:layout_width="@dimen/image_cards_width"
+                    android:layout_height="@dimen/image_cards_height"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_delete"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/eliminar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/sub_eliminar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#A8003D70" />
+
+            <LinearLayout
+                android:id="@+id/linShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="@dimen/padding_element_configuration"
+                android:paddingBottom="@dimen/padding_element_configuration">
+
+                <ImageView
+                    android:layout_width="@dimen/image_cards_width"
+                    android:layout_height="@dimen/image_cards_height"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_compart"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/exportar_datos"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/sub_exportar"
+                        android:textSize="@dimen/text_normal"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-smallcaps"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

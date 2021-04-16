@@ -28,7 +28,7 @@ public interface ResponsableDao {
 
     //Insertar un usuario
     @Insert
-    long sp_Ins_Responsable(ResponsableDB user);
+    long sp_Ins_Responsable(ResponsableDB responsable);
 
     @Query("SELECT * FROM " + ResponsableDB.TABLE_NAME + " WHERE " + ResponsableDB.COLUMN_ID + " = :id")
     ResponsableDB sp_Sel_Responsable(int id);

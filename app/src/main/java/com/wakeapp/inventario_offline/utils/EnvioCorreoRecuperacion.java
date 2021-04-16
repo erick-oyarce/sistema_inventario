@@ -43,7 +43,7 @@ public class EnvioCorreoRecuperacion {
             Session session = Session.getInstance(props,
                     new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication("eoyarcepizarro@gmail.com", "erick1993");
+                            return new PasswordAuthentication(Constants.EMAIL_REC, Constants.PASS_EMAIL_REC);
                         }
                     });
 

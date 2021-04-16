@@ -28,7 +28,7 @@ public interface MovilDao {
 
     //Insertar un MovilDB
     @Insert
-    long sp_Ins_Movil(MovilDB user);
+    long sp_Ins_Movil(MovilDB movil);
 
     @Query("SELECT * FROM " + MovilDB.TABLE_NAME + " WHERE " + MovilDB.COLUMN_ID + " = :id")
     MovilDB sp_Sel_Movil(int id);

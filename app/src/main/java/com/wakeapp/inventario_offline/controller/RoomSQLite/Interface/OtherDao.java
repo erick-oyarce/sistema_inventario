@@ -27,7 +27,7 @@ public interface OtherDao {
 
     //Insertar otros
     @Insert
-    long sp_Ins_Other(OtherDB user);
+    long sp_Ins_Other(OtherDB other);
 
     @Query("SELECT * FROM " + OtherDB.TABLE_NAME + " WHERE " + OtherDB.COLUMN_ID + " = :id")
     OtherDB sp_Sel_Other(int id);

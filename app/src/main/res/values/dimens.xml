@@ -3,4 +3,34 @@
     <dimen name="margin_normal">8dp</dimen>
     <dimen name="text_normal">18sp</dimen>
     <dimen name="text_title">22sp</dimen>
+    <dimen name="padding_element_configuration">15dp</dimen>
+    <dimen name="image_cards_width">30dp</dimen>
+    <dimen name="image_cards_height">30dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="width_img_star_rate">45dp</dimen>
+    <dimen name="height_img_star_rate">45dp</dimen>
+    <dimen name="text_version">14sp</dimen>
+    <dimen name="text_sub_version">12sp</dimen>
+    <!--
+    Because the window insets on round devices are larger than 15dp, this padding only applies
+    to square screens.
+    -->
+    <dimen name="box_inset_layout_padding">0dp</dimen>
+
+    <!--
+    This padding applies to both square and round screens. The total padding between the buttons
+    and the window insets is box_inset_layout_padding (above variable) on square screens and
+    inner_frame_layout_padding (below variable) on round screens.
+    -->
+    <dimen name="inner_frame_layout_padding">5dp</dimen>
+
+    <dimen name="item_height_treeLine">88dp</dimen>
+    <dimen name="item_padding_vertical">16dp</dimen>
+    <dimen name="item_padding_horizontal">16dp</dimen>
+    <dimen name="item_text_sizes_seondary">12sp</dimen>
+    <dimen name="common_padding_nano">2dp</dimen>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_bottom_scroll">64dp</dimen>
+    <dimen name="circle_radius">28dp</dimen>
+    <dimen name="common_padding_micro">4dp</dimen>
 </resources>

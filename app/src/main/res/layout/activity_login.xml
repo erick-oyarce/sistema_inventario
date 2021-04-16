@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,9 +13,9 @@
         android:id="@+id/titulo_login"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/linLogin"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         >
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -64,110 +64,13 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/linLogin"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_alignParentBottom="true">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:id="@+id/frameContent"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        />
 
-        <TextView
-            android:id="@+id/txtLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/iniciar_sesion"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/text_title"/>
-
-        <TextView
-            android:id="@+id/txt_SubLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ingrese_sus_credenciales"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_normal"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="#83512DA8"
-            android:layout_marginBottom="10dp"/>
-
-        <LinearLayout
-            android:id="@+id/form_ingreso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_normal"
-                android:imeOptions="actionNext"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/usuario"
-                app:startIconDrawable="@drawable/ic_baseline_person_24"
-                app:errorEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPersonName"
-                    android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_normal"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/contrasena"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:endIconMode="password_toggle"
-                app:errorEnabled="false">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:inputType="textPassword"
-                    android:lines="1"
-                    android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnIngresar"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            android:elevation="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="32dp"
-            android:textStyle="bold"
-            android:text="@string/ingresar"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="#fff" />
-
-        <TextView
-            android:id="@+id/recuperar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:text="@string/recuperar_contrasena"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textColor="#83512DA8"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

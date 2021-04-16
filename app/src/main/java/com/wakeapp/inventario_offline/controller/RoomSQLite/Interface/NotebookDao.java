@@ -29,7 +29,7 @@ public interface NotebookDao {
 
     //Insertar un usuario
     @Insert
-    long sp_Ins_Notebook(NotebookDB user);
+    long sp_Ins_Notebook(NotebookDB notebook);
 
     @Query("SELECT * FROM " + NotebookDB.TABLE_NAME + " WHERE " + NotebookDB.COLUMN_ID + " = :id")
     NotebookDB sp_Sel_Notebook(int id);
