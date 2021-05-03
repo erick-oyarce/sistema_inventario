@@ -96,4 +96,40 @@
     <string name="nueva_ubicacion">Nueva Ubicación</string>
     <string name="nombre_ubicacion">Nombre de la ubicación</string>
     <string name="error_agregar_ubicacion">Error al agregar la ubicación</string>
+    <string name="editar_ubicacion">Modifica los datos</string>
+    <string name="error_editar_ubicacion">Error al editar la ubicación</string>
+    <string name="nueva_responsable">Nuevo Responsable</string>
+    <string name="identificador">Identificador</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="error_agregar_responsable">Error al agregar el responsable</string>
+    <string name="identificador_existe">El identificador ya está registrado</string>
+    <string name="editar_informacion">Editar Información</string>
+    <string name="error_editar_datos">Error al editar los datos</string>
+    <string name="recordar">Recordar</string>
+    <string name="tipo_activo">Tipo de activo</string>
+
+    <string name="consulta">Consulta</string>
+    <string name="reclamo">Reclamo</string>
+    <string name="felicitacion">Felicitación</string>
+    
+    <string name="movil">Móvil</string>
+    <string name="notebook">Notebook</string>
+    <string name="herramienta">Herramienta</string>
+    <string name="mueble">Mueble</string>
+    <string name="otro">Otro</string>
+
+    <string-array name="options_rate">
+        <item>@string/consulta</item>
+        <item>@string/reclamo</item>
+        <item>@string/felicitacion</item>
+    </string-array>
+
+    <string-array name="options_active">
+        <item>@string/movil</item>
+        <item>@string/notebook</item>
+        <item>@string/herramienta</item>
+        <item>@string/mueble</item>
+        <item>@string/otro</item>
+    </string-array>
 </resources>

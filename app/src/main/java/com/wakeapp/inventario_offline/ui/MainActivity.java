@@ -1,17 +1,16 @@
 package com.wakeapp.inventario_offline.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.wakeapp.inventario_offline.R;
+import com.wakeapp.inventario_offline.Response.ReponseAllActive;
+import com.wakeapp.inventario_offline.ViewModels.AllActiveViewModel;
 import com.wakeapp.inventario_offline.controller.RoomSQLite.AppDataBase;
-import com.wakeapp.inventario_offline.databinding.ActivityLoginBinding;
 import com.wakeapp.inventario_offline.databinding.ActivityMainBinding;
 import com.wakeapp.inventario_offline.utils.Constants;
 
@@ -24,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
      **/
     private AppDataBase bd;
 
+    //ViewModel
+    AllActiveViewModel allActiveViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +37,23 @@ public class MainActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
+        allActiveViewModel = new ViewModelProvider(this).get(AllActiveViewModel.class);
+
         init();
+        ObserverAllActive();
+        allActiveViewModel.searchActives(bd);
+
+    }
+
+    private void ObserverAllActive(){
+        allActiveViewModel.getAllActive().observe(this, allActive -> {
+            //OBSERVING FOR ANY DATA CHANGUE
+            cargarCantidades(allActive.get(0));
+        });
     }
 
     public void init(){
 
-        cargarCantidades();
 
         binding.cardGestion.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, GestionActivity.class)) );
         binding.cardInventario.setOnClickListener(v ->{});
@@ -48,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         binding.cardConfiguracion.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ConfigurationActivity.class)));
     }
 
-    public void cargarCantidades(){
-        binding.itemsInventory.txtNotebook.setText(bd.notebookDao().sp_Sel_CountNotebook()+"");
-        binding.itemsInventory.txtHerramienta.setText(bd.toolDao().sp_Sel_CountTool()+"");
-        binding.itemsInventory.txtMovil.setText(bd.movilDao().sp_Sel_CountMovil()+"");
-        binding.itemsInventory.txtOtro.setText(bd.otherDao().sp_Sel_CountOther()+"");
-        binding.itemsInventory.txtMueble.setText(bd.furnitureDao().sp_Sel_CountFurniture()+"");
+    public void cargarCantidades(ReponseAllActive allActive){
+        binding.itemsInventory.txtNotebook.setText(allActive.getNotebookDB()+"");
+        binding.itemsInventory.txtHerramienta.setText(allActive.getToolDB()+"");
+        binding.itemsInventory.txtMovil.setText(allActive.getMovilDB()+"");
+        binding.itemsInventory.txtOtro.setText(allActive.getOtherDB()+"");
+        binding.itemsInventory.txtMueble.setText(allActive.getFurnitureDB()+"");
     }
 }

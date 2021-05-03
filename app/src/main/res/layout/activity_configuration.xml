@@ -37,6 +37,7 @@
                     android:layout_height="@dimen/image_cards_height"
                     android:layout_marginEnd="5dp"
                     android:src="@drawable/ic_fingerprint_scan"/>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

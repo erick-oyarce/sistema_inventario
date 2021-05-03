@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wakeapp.inventario_offline">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,14 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inventario_offline">
-
-        <activity android:name=".ui.UbicationsActivity"/>
+        <activity android:name=".ui.AddActiveActivity"></activity>
+        <activity android:name=".ui.ResponsableActivity" />
+        <activity android:name=".ui.UbicationsActivity" />
         <activity android:name=".ui.RateAppActivity" />
         <activity android:name=".ui.GestionActivity" />
         <activity android:name=".ui.ConfigurationActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.MainActivity" />
-
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

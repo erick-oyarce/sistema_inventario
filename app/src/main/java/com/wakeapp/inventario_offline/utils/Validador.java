@@ -72,4 +72,42 @@ public class Validador {
 
         return valido;
     }
+
+    public static boolean camposResponsable(Context context, TextInputLayout identificador, TextInputLayout nombre, TextInputLayout apellido, TextInputLayout descripcion){
+        boolean valido = true;
+
+        if(descripcion.getEditText().getText().toString().trim().equals("")){
+            descripcion.setError(context.getString(R.string.campo_requerido));
+            descripcion.requestFocus();
+            valido = false;
+        }else{
+            descripcion.setError(null);
+        }
+
+        if(apellido.getEditText().getText().toString().trim().equals("")){
+            apellido.setError(context.getString(R.string.campo_requerido));
+            apellido.requestFocus();
+            valido = false;
+        }else{
+            apellido.setError(null);
+        }
+
+        if(nombre.getEditText().getText().toString().trim().equals("")){
+            nombre.setError(context.getString(R.string.campo_requerido));
+            nombre.requestFocus();
+            valido = false;
+        }else{
+            nombre.setError(null);
+        }
+
+        if(identificador.getEditText().getText().toString().trim().equals("")){
+            identificador.setError(context.getString(R.string.campo_requerido));
+            nombre.requestFocus();
+            valido = false;
+        }else{
+            identificador.setError(null);
+        }
+
+        return valido;
+    }
 }

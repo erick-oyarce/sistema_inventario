@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/tvUbicacion"
+        android:id="@+id/tvDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/ubicacion"
@@ -21,47 +21,28 @@
         android:layout_marginStart="@dimen/item_padding_horizontal"
         android:layout_marginEnd="@dimen/item_padding_horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnEdit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tvDesc"
+        android:id="@+id/tvNombre"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="@string/descripcion"
         android:textAppearance="@style/itemMedium"
         android:layout_marginBottom="@dimen/item_padding_vertical"
-        app:layout_constraintStart_toStartOf="@id/tvUbicacion"
-        app:layout_constraintEnd_toEndOf="@id/tvUbicacion"
-        app:layout_constraintTop_toBottomOf="@id/tvUbicacion"
+        app:layout_constraintStart_toStartOf="@id/tvDesc"
+        app:layout_constraintEnd_toEndOf="@id/tvDesc"
+        app:layout_constraintTop_toBottomOf="@id/tvDesc"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <ImageView
-        android:id="@+id/btnEdit"
-        android:layout_width="@dimen/width_img_star_rate"
-        android:layout_height="@dimen/height_img_star_rate"
-        android:padding="@dimen/padding_normal"
-        android:src="@drawable/ic_baseline_edit_24"
-        app:layout_constraintEnd_toStartOf="@id/btnDelete"
-        app:layout_constraintTop_toTopOf="@id/btnDelete"
-        app:layout_constraintBottom_toBottomOf="@id/btnDelete"
-        />
 
-    <ImageView
-        android:id="@+id/btnDelete"
-        android:layout_width="@dimen/width_img_star_rate"
-        android:layout_height="@dimen/height_img_star_rate"
-        android:padding="@dimen/padding_normal"
-        android:src="@drawable/ic_baseline_delete_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/color_divider"
-        app:layout_constraintStart_toStartOf="@id/tvDesc"
+        app:layout_constraintStart_toStartOf="@id/tvNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

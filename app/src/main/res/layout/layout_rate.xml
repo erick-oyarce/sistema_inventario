@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/rateStar_1"
+        android:layout_width="@dimen/width_img_star_rate"
+        android:layout_height="@dimen/height_img_star_rate"
+        android:src="@drawable/ic_star"
+        android:padding="@dimen/padding_normal"
+        android:layout_margin="@dimen/padding_normal"/>
+    <ImageView
+        android:id="@+id/rateStar_2"
+        android:layout_width="@dimen/width_img_star_rate"
+        android:layout_height="@dimen/height_img_star_rate"
+        android:src="@drawable/ic_star"
+        android:padding="@dimen/padding_normal"
+        android:layout_margin="@dimen/padding_normal"/>
+    <ImageView
+        android:id="@+id/rateStar_3"
+        android:layout_width="@dimen/width_img_star_rate"
+        android:layout_height="@dimen/height_img_star_rate"
+        android:src="@drawable/ic_star"
+        android:padding="@dimen/padding_normal"
+        android:layout_margin="@dimen/padding_normal"/>
+    <ImageView
+        android:id="@+id/rateStar_4"
+        android:layout_width="@dimen/width_img_star_rate"
+        android:layout_height="@dimen/height_img_star_rate"
+        android:src="@drawable/ic_star"
+        android:padding="@dimen/padding_normal"
+        android:layout_margin="@dimen/padding_normal"/>
+    <ImageView
+        android:id="@+id/rateStar_5"
+        android:layout_width="@dimen/width_img_star_rate"
+        android:layout_height="@dimen/height_img_star_rate"
+        android:src="@drawable/ic_star"
+        android:padding="@dimen/padding_normal"
+        android:layout_margin="@dimen/padding_normal"/>
+
+
+</LinearLayout>

@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/wakeapp"
+                android:text="Y qué pasa"
                 android:fontFamily="sans-serif-smallcaps"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"

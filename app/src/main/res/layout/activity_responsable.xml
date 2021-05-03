@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="@id/floatAdd"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerUbicaciones"
+        android:id="@+id/recyclerResponsable"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="@dimen/padding_normal"

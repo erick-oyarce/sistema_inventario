@@ -21,8 +21,8 @@ public interface UbicationDao {
     List<UbicationDB> sp_Sel_AllUbications();
 
     //actualiza la informacion de la ubicacion
-    @Query("UPDATE " + UbicationDB.TABLE_NAME + " SET ubicacion = :ubicacion, observacion = :password, observacion = :email WHERE "+ UbicationDB.COLUMN_ID +" = :id")
-    void sp_Upd_Ubication(int id, String ubicacion, String password, String email);
+    @Query("UPDATE " + UbicationDB.TABLE_NAME + " SET ubicacion = :ubicacion, observacion = :observacion WHERE "+ UbicationDB.COLUMN_ID +" = :id")
+    int sp_Upd_Ubication(int id, String ubicacion, String observacion);
 
     @Query("DELETE FROM " + UbicationDB.TABLE_NAME + " WHERE " + UbicationDB.COLUMN_ID + " = :id")
     int sp_Del_Ubication(int id);

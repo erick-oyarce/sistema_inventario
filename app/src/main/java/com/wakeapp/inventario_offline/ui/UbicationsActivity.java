@@ -1,20 +1,32 @@
 package com.wakeapp.inventario_offline.ui;
 
+import android.graphics.Canvas;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.wakeapp.inventario_offline.R;
 import com.wakeapp.inventario_offline.controller.Adapters.AdapterUbicaciones;
+import com.wakeapp.inventario_offline.controller.Functions.SwipeUbications;
 import com.wakeapp.inventario_offline.controller.RoomSQLite.AppDataBase;
 import com.wakeapp.inventario_offline.databinding.ActivityUbicationsBinding;
+import com.wakeapp.inventario_offline.model.ToolDB;
+import com.wakeapp.inventario_offline.model.UbicationDB;
 import com.wakeapp.inventario_offline.utils.Alertas;
 import com.wakeapp.inventario_offline.utils.Constants;
 
-import static android.view.View.GONE;
+import java.util.List;
+
+import es.dmoral.toasty.Toasty;
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 public class UbicationsActivity extends AppCompatActivity {
 
@@ -26,6 +38,7 @@ public class UbicationsActivity extends AppCompatActivity {
     private AppDataBase bd;
 
     private AdapterUbicaciones mAdapter;
+    private List<UbicationDB> listaUbicaciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,32 +56,50 @@ public class UbicationsActivity extends AppCompatActivity {
     public void init(){
         cargarUbicaciones();
         if(bd.ubicationDao().sp_Sel_CountUbication() > 0){
-            binding.indicador.setVisibility(GONE);
+            binding.indicador.setVisibility(View.GONE);
         }
-        binding.floatAdd.setOnClickListener( v -> Alertas.alertNuevaUbicacion(getLayoutInflater(), UbicationsActivity.this, bd, mAdapter));
+        binding.floatAdd.setOnClickListener( v -> Alertas.alertNuevaUbicacion(getLayoutInflater(), UbicationsActivity.this, bd, mAdapter, binding));
+        binding.appbar.topAppBar.setNavigationOnClickListener(v->finish());
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeUbications(UbicationsActivity.this).itemTouchHelper());
+        itemTouchHelper.attachToRecyclerView(binding.recyclerUbicaciones);
     }
 
     public void cargarUbicaciones(){
-        binding.listUbicaciones.setHasFixedSize(true);
-        binding.listUbicaciones.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new AdapterUbicaciones(bd.ubicationDao().sp_Sel_AllUbications());
-        binding.listUbicaciones.setAdapter(mAdapter);
+        binding.recyclerUbicaciones.setHasFixedSize(true);
+        binding.recyclerUbicaciones.setLayoutManager(new LinearLayoutManager(this));
+        listaUbicaciones = bd.ubicationDao().sp_Sel_AllUbications();
+        mAdapter = new AdapterUbicaciones(listaUbicaciones);
+        binding.recyclerUbicaciones.setAdapter(mAdapter);
 
-        mAdapter.setOnItemClickListener(new AdapterUbicaciones.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-
-            }
-
-            @Override
-            public void onDeleteClick(int position) {
-
-            }
-
-            @Override
-            public void onEditClikc(int position) {
-
-            }
-        });
     }
+
+    public void elminarUbicacion(int position){
+        UbicationDB ubicationDB = listaUbicaciones.get(position);
+        if(bd.ubicationDao().sp_Del_Ubication(listaUbicaciones.get(position).getId()) > 0){
+            Snackbar.make(binding.recyclerUbicaciones, "Ubicación eliminada" , Snackbar.LENGTH_LONG)
+                    .setAction("Deshacer", view -> deshacerEliminado(ubicationDB, position)).show();
+            listaUbicaciones.remove(position);
+            mAdapter.notifyItemRemoved(position);
+            if(bd.ubicationDao().sp_Sel_CountUbication() < 1){
+                binding.indicador.setVisibility(View.VISIBLE);
+            }
+        }else{
+            Toasty.error(getApplicationContext(),"Error al eliminar", Toasty.LENGTH_LONG).show();
+        }
+    }
+
+    public void editarUbicacion(int position){
+        Alertas.alertEditUbicacion(getLayoutInflater(), UbicationsActivity.this, bd, listaUbicaciones.get(position));
+    }
+
+    public void deshacerEliminado(UbicationDB ubicationDB, int position){
+        bd.ubicationDao().sp_Ins_Ubication(ubicationDB);
+        listaUbicaciones.add(position,ubicationDB);
+        mAdapter.notifyItemInserted(position);
+        binding.indicador.setVisibility(View.INVISIBLE);
+    }
+
+
+
 }

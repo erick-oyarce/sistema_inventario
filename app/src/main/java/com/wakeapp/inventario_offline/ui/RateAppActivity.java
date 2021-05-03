@@ -3,13 +3,12 @@ package com.wakeapp.inventario_offline.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 
 import com.wakeapp.inventario_offline.R;
-import com.wakeapp.inventario_offline.databinding.ActivityConfigurationBinding;
 import com.wakeapp.inventario_offline.databinding.ActivityRateAppBinding;
-import com.wakeapp.inventario_offline.utils.Functions;
 import com.wakeapp.inventario_offline.utils.Local;
+import com.wakeapp.inventario_offline.controller.Functions.RateFunction;
 
 public class RateAppActivity extends AppCompatActivity {
 
@@ -27,18 +26,22 @@ public class RateAppActivity extends AppCompatActivity {
     public void init(){
 
         binding.appbar.topAppBar.setTitle(R.string.opinion);
-        setRateStar();
+        binding.appbar.topAppBar.setNavigationOnClickListener(v->finish());
+
 
         binding.btnEnviar.setOnClickListener(v -> sendRate());
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<>(
+                        this,
+                        R.layout.dropdown_menu_popup_item,
+                        getResources().getStringArray(R.array.options_rate));
+
+        binding.dropdownOptions.setAdapter(adapter);
+
+        RateFunction.setRateStar(getApplicationContext(), binding);
     }
 
-    public void setRateStar(){
-        binding.rateStar1.setOnClickListener(v->Functions.changueStarRate(getApplicationContext(), 1, binding));
-        binding.rateStar2.setOnClickListener(v->Functions.changueStarRate(getApplicationContext(), 2, binding));
-        binding.rateStar3.setOnClickListener(v->Functions.changueStarRate(getApplicationContext(), 3, binding));
-        binding.rateStar4.setOnClickListener(v->Functions.changueStarRate(getApplicationContext(), 4, binding));
-        binding.rateStar5.setOnClickListener(v->Functions.changueStarRate(getApplicationContext(), 5, binding));
-    }
+
 
     public void sendRate(){
         String rate;

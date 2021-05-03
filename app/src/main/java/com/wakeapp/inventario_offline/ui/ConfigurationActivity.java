@@ -46,6 +46,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         binding.linUbic.setOnClickListener(v -> startActivity(new Intent(ConfigurationActivity.this, UbicationsActivity.class)));
         binding.linOpinion.setOnClickListener(v -> startActivity(new Intent(ConfigurationActivity.this, RateAppActivity.class)));
+        binding.linResp.setOnClickListener(v -> startActivity(new Intent(ConfigurationActivity.this, ResponsableActivity.class)));
 
     }
 

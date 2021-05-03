@@ -40,6 +40,7 @@ dependencies {
     def toasty = "1.4.2"
     def mail = "1.5.5"
     def lottieFiles = "3.4.1"
+    def lifecycle_version = "2.3.1"
 
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -64,4 +65,9 @@ dependencies {
 
     //Libreria para iconos con movimiento
     implementation "com.airbnb.android:lottie:$lottieFiles"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
 }

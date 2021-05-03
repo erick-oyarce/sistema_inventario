@@ -21,7 +21,7 @@ public interface ResponsableDao {
 
     //actualiza la informacion del ResponsableDB
     @Query("UPDATE " + ResponsableDB.TABLE_NAME + " SET identificador = :identificador, nombre = :nombre, Apellido = :Apellido, Descripcion = :Descripcion WHERE "+ ResponsableDB.COLUMN_ID +" = :id")
-    void sp_Upd_Responsable(int id, String identificador, String nombre, String Apellido, String Descripcion);
+    int sp_Upd_Responsable(int id, String identificador, String nombre, String Apellido, String Descripcion);
 
     @Query("DELETE FROM " + ResponsableDB.TABLE_NAME + " WHERE " + ResponsableDB.COLUMN_ID + " = :id")
     int sp_Del_Responsable(int id);
@@ -32,4 +32,7 @@ public interface ResponsableDao {
 
     @Query("SELECT * FROM " + ResponsableDB.TABLE_NAME + " WHERE " + ResponsableDB.COLUMN_ID + " = :id")
     ResponsableDB sp_Sel_Responsable(int id);
+
+    @Query("SELECT COUNT(*) FROM " + ResponsableDB.TABLE_NAME + " WHERE identificador =:identificador")
+    int sp_Sel_IdentificadorExist(String identificador);
 }

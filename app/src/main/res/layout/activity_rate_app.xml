@@ -19,34 +19,22 @@
        android:orientation="vertical"
        android:layout_below="@id/appbar">
 
-       <TextView
-           android:id="@+id/txtLogin"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/tipo_comentario"
-           android:textStyle="bold"
-           android:fontFamily="sans-serif-smallcaps"
-           android:textColor="@color/colorPrimaryDark"
-           android:textSize="@dimen/text_title"/>
+       <com.google.android.material.textfield.TextInputLayout
 
-
-       <RelativeLayout
-           android:id="@+id/relSpinner1"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
            android:layout_width="match_parent"
-           android:layout_height="51dp"
-           android:layout_gravity="bottom"
-           android:background="@drawable/style_spinner">
+           android:layout_height="wrap_content"
+           android:hint="@string/tipo_comentario"
+           android:textColorHint="@color/colorPrimaryDark"
+           android:orientation="horizontal">
 
-           <Spinner
-               android:id="@+id/spinnerBusqueda"
+           <AutoCompleteTextView
+               android:id="@+id/dropdown_options"
                android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:backgroundTint="#000"
-               android:dropDownSelector="#000"
-               android:popupBackground="#ffffff"
-               android:theme="@android:style/Theme.Material.Light" />
-
-       </RelativeLayout>
+               android:layout_height="wrap_content"
+               android:text="@string/consulta"
+               android:inputType="none"/>
+       </com.google.android.material.textfield.TextInputLayout>
 
        <com.google.android.material.textfield.TextInputLayout
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -71,51 +59,12 @@
    </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_above="@id/btnEnviar"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/rateStar_1"
-            android:layout_width="@dimen/width_img_star_rate"
-            android:layout_height="@dimen/height_img_star_rate"
-            android:src="@drawable/ic_star"
-            android:padding="@dimen/padding_normal"
-            android:layout_margin="@dimen/padding_normal"/>
-        <ImageView
-            android:id="@+id/rateStar_2"
-            android:layout_width="@dimen/width_img_star_rate"
-            android:layout_height="@dimen/height_img_star_rate"
-            android:src="@drawable/ic_star"
-            android:padding="@dimen/padding_normal"
-            android:layout_margin="@dimen/padding_normal"/>
-        <ImageView
-            android:id="@+id/rateStar_3"
-            android:layout_width="@dimen/width_img_star_rate"
-            android:layout_height="@dimen/height_img_star_rate"
-            android:src="@drawable/ic_star"
-            android:padding="@dimen/padding_normal"
-            android:layout_margin="@dimen/padding_normal"/>
-        <ImageView
-            android:id="@+id/rateStar_4"
-            android:layout_width="@dimen/width_img_star_rate"
-            android:layout_height="@dimen/height_img_star_rate"
-            android:src="@drawable/ic_star"
-            android:padding="@dimen/padding_normal"
-            android:layout_margin="@dimen/padding_normal"/>
-        <ImageView
-            android:id="@+id/rateStar_5"
-            android:layout_width="@dimen/width_img_star_rate"
-            android:layout_height="@dimen/height_img_star_rate"
-            android:src="@drawable/ic_star"
-            android:padding="@dimen/padding_normal"
-            android:layout_margin="@dimen/padding_normal"/>
-
-
-    </LinearLayout>
+   <include
+       android:id="@+id/star"
+       android:layout_above="@id/btnEnviar"
+       layout="@layout/layout_rate"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEnviar"

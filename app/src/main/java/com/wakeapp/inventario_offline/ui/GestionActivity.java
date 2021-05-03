@@ -3,6 +3,7 @@ package com.wakeapp.inventario_offline.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -42,7 +43,7 @@ public class GestionActivity extends AppCompatActivity {
         binding.appbar.topAppBar.setTitle(getString(R.string.gestion_activos));
         binding.linAdd.setOnClickListener( v->{
             if(bd.ubicationDao().sp_Sel_CountUbication() > 0){
-
+                startActivity(new Intent(GestionActivity.this, AddActiveActivity.class));
             }else{
                 Alertas.validarCrearUbicacion(getLayoutInflater(), GestionActivity.this);
             }
